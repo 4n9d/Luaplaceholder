@@ -219,7 +219,7 @@ local shouldRunSpecificLoop = false
 -- Setup Notification GUI
 local function setupNotificationGui()
     ScreenGui = Instance.new("ScreenGui")
-    ScreenGui.Name = "EleriumNotification"
+    ScreenGui.Name = "4n9d's Notification"
     ScreenGui.Parent = player:WaitForChild("PlayerGui")
     ScreenGui.ResetOnSpawn = false
 
@@ -371,13 +371,13 @@ local function removeBankWalls()
     if bankWalls then
         bankWalls:Destroy()
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "BankWalls removed successfully!",
             Duration = 3
         })
     else
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "BankWalls not found in Workspace!",
             Duration = 3
         })
@@ -623,7 +623,7 @@ local function enableSpecificTPKill()
     if not targetedTPKillPlayer or not targetedTPKillPlayer.Character then
         settings.tpKillEnabled = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "TP Kill: No valid target!",
             Duration = 2
         })
@@ -683,7 +683,7 @@ local function rejoinServer()
     if not success then
         warn("Rejoin failed: " .. tostring(errorMsg))
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Failed to rejoin server. Retrying...",
             Duration = 3
         })
@@ -693,7 +693,7 @@ local function rejoinServer()
         end)
     else
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Rejoining server...",
             Duration = 3
         })
@@ -708,7 +708,7 @@ local function joinSmallestServer()
     if not success then
         warn("Failed to get server list: " .. tostring(servers))
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Failed to fetch server list. Please try again.",
             Duration = 3
         })
@@ -728,14 +728,14 @@ local function joinSmallestServer()
         end)
         if success then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Joining smallest server with " .. minPlayers .. " players...",
                 Duration = 3
             })
         else
             warn("Teleport failed: " .. tostring(errorMsg))
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Failed to join smallest server. Please try again.",
                 Duration = 3
             })
@@ -743,7 +743,7 @@ local function joinSmallestServer()
     else
         warn("No servers found.")
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No servers found. Please try again.",
             Duration = 3
         })
@@ -754,7 +754,7 @@ end
 local function changeSword(swordName)
     if not swordName or swordName == "" then
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Please enter a sword name!",
             Duration = 3
         })
@@ -765,7 +765,7 @@ local function changeSword(swordName)
     end)
     if not success or not playerStats then
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Failed to find PlayerStats!",
             Duration = 3
         })
@@ -774,7 +774,7 @@ local function changeSword(swordName)
     local playerSwords = playerStats:FindFirstChild("PlayerSwords")
     if not playerSwords then
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Failed to find PlayerSwords!",
             Duration = 3
         })
@@ -783,7 +783,7 @@ local function changeSword(swordName)
     local originalSword = playerSwords:FindFirstChild("Default Sword")
     if not originalSword then
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Default Sword not found!",
             Duration = 3
         })
@@ -794,14 +794,14 @@ local function changeSword(swordName)
         newSword.Name = swordName
         newSword.Parent = playerSwords
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Added sword: " .. swordName .. " to Inventory!",
             Duration = 3
         })
     end)
     if not success then
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Error adding sword: " .. tostring(result),
             Duration = 3
         })
@@ -829,7 +829,7 @@ end
 local function openCase(caseName, amount)
     if not caseName then
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Error: No case selected!",
             Duration = 3
         })
@@ -840,7 +840,7 @@ local function openCase(caseName, amount)
     if amount > 100 then amount = 100 end
     
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Opening " .. amount .. " " .. caseName .. "(s)...",
         Duration = 3
     })
@@ -855,7 +855,7 @@ local function openCase(caseName, amount)
             remote:FireServer(unpack(args))
         end)
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Opened " .. i .. "/" .. amount .. " " .. caseName .. "(s)",
             Duration = 2
         })
@@ -863,7 +863,7 @@ local function openCase(caseName, amount)
     end
     
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Completed opening " .. amount .. " " .. caseName .. "(s)",
         Duration = 3
     })
@@ -1089,7 +1089,7 @@ local function autoSnipeSpecificLoop()
                     autoSnipeSpecificEnabled = false
                     shouldRunSpecificLoop = false
                     StarterGui:SetCore("SendNotification", {
-                        Title = "Elerium Hub",
+                        Title = "4n9d's STFO Hub",
                         Text = "Specific target not valid or out of range!",
                         Duration = 3
                     })
@@ -1105,7 +1105,7 @@ local function enableCarpet()
     if r15(player) then
         settings.carpetEnabled = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Carpet not supported for R15 characters!",
             Duration = 3
         })
@@ -1270,7 +1270,7 @@ local function spectatePlayer(playerName)
                     end
                 end)
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Spectating " .. target.Name,
                     Duration = 3
                 })
@@ -1279,7 +1279,7 @@ local function spectatePlayer(playerName)
         end
     end
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Player not found or invalid!",
         Duration = 3
     })
@@ -1366,7 +1366,7 @@ local function tweenToOrbPosition(position, distance)
     currentOrbTween = TweenService:Create(hrp, tweenInfo, {CFrame = targetCFrame})
     currentOrbTween:Play()
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Farming Orb at " .. tostring(position) .. "!",
         Duration = 2
     })
@@ -1377,7 +1377,7 @@ local function autoCollectOrbsLoop()
         settings.farmingOrbsEnabled = false
         autoCollectOrbsActive = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No Orbs folder found!",
             Duration = 3
         })
@@ -1398,7 +1398,7 @@ local function autoCollectOrbsLoop()
             else
                 autoCollectOrbsActive = false
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Farmed all orbs! Waiting for new spawns...",
                     Duration = 3
                 })
@@ -1446,7 +1446,7 @@ local function tweenToPosition(rootPart, position, speed)
     currentLuckyBlockTween = TweenService:Create(rootPart, tweenInfo, {CFrame = targetCFrame})
     currentLuckyBlockTween:Play()
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Farming Lucky Block at " .. tostring(position) .. "!",
         Duration = 2
     })
@@ -1463,7 +1463,7 @@ local function returnToSafeZone()
         autoCollectLuckyBlocksActive = false
         settings.farmingLuckyBlocksEnabled = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No Safezone found!",
             Duration = 3
         })
@@ -1473,7 +1473,7 @@ local function returnToSafeZone()
     local targetPosition = Vector3.new(safeZoneMiddle.Position.X, hrp.Position.Y, safeZoneMiddle.Position.Z)
     tweenToPosition(hrp, targetPosition, speed)
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Returned to Safezone after collecting Lucky Block!",
         Duration = 2
     })
@@ -1484,7 +1484,7 @@ local function autoCollectLuckyBlocksLoop()
         settings.farmingLuckyBlocksEnabled = false
         autoCollectLuckyBlocksActive = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No Lucky Blocks folder found!",
             Duration = 3
         })
@@ -1506,7 +1506,7 @@ local function autoCollectLuckyBlocksLoop()
         else
             returnToSafeZone()
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Farmed all Lucky Blocks! Waiting for new spawns...",
                 Duration = 3
             })
@@ -1553,7 +1553,7 @@ local function moveToSafeZone(humanoidRootPart)
         local targetCFrame = CFrame.new(Vector3.new(centerPosition.X, humanoidRootPart.Position.Y, centerPosition.Z))
         tweenToZoneCFrame(humanoidRootPart, targetCFrame, speed)
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Returning to Safezone!",
             Duration = 2
         })
@@ -1585,7 +1585,7 @@ local function moveToTimeZone(humanoidRootPart, zone)
     local speed = 20 -- Standardized speed
     tweenToZoneCFrame(humanoidRootPart, CFrame.new(targetPosition), speed)
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Farming Time Zone " .. zone.Name .. " at " .. tostring(targetPosition) .. "!",
         Duration = 2
     })
@@ -1603,7 +1603,7 @@ local function autoCollectZonesLoop()
         settings.farmingTimeZonesEnabled = false
         autoCollectZonesActive = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No Time Zones found!",
             Duration = 3
         })
@@ -1620,7 +1620,7 @@ local function autoCollectZonesLoop()
                 if currentWaypointIndex > #waypoints then
                     currentWaypointIndex = 1
                     StarterGui:SetCore("SendNotification", {
-                        Title = "Elerium Hub",
+                        Title = "4n9d's STFO Hub",
                         Text = "Farmed all Time Zones! Restarting cycle...",
                         Duration = 3
                     })
@@ -1639,7 +1639,7 @@ local function autoCollectZonesLoop()
             else
                 moveToSafeZone(humanoidRootPart)
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "No Time Zones available (excluding KOTH)! Waiting for new zones...",
                     Duration = 3
                 })
@@ -1670,7 +1670,7 @@ local function tweenToKOTHPosition(humanoidRootPart, position, speed)
     currentKOTHTween = TweenService:Create(humanoidRootPart, tweenInfo, {CFrame = targetCFrame})
     currentKOTHTween:Play()
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Moving to KOTH at " .. tostring(position) .. "!",
         Duration = 2
     })
@@ -1681,7 +1681,7 @@ local function startKOTHCircling()
         settings.autoFarmKOTHEnabled = false
         autoCollectKOTHActive = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No KOTH found!",
             Duration = 3
         })
@@ -1724,7 +1724,7 @@ local function startKOTHCircling()
         -- Notify periodically to avoid spamming
         if math.floor(kothCircleAngle % (2 * math.pi)) == 2 then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Circling KOTH at " .. tostring(kothPosition) .. "!",
                 Duration = 2
             })
@@ -1737,7 +1737,7 @@ local function autoCollectKOTHLoop()
         settings.autoFarmKOTHEnabled = false
         autoCollectKOTHActive = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No KOTH found!",
             Duration = 3
         })
@@ -1993,7 +1993,7 @@ local function enableUndergroundTPKill(range, targetPlayerName)
     if not Root or not grass then
         settings.undergroundTPKillEnabled = false
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Character or map (Grass) not found!",
             Duration = 3
         })
@@ -2019,7 +2019,7 @@ local function enableUndergroundTPKill(range, targetPlayerName)
                 settings.undergroundTPKillEnabled = false
                 disableUndergroundTPKill()
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "No valid target found for Underground TP Kill!",
                     Duration = 3
                 })
@@ -2376,7 +2376,7 @@ RunService.RenderStepped:Connect(function(deltaTime)
                     lastHitTime = currentTime
                     -- Notify for debugging (optional, can be removed)
                     StarterGui:SetCore("SendNotification", {
-                        Title = "Elerium Hub",
+                        Title = "4n9d's STFO Hub",
                         Text = "Auto Hit triggered on " .. target.Name,
                         Duration = 1
                     })
@@ -2406,7 +2406,7 @@ RunService.RenderStepped:Connect(function(deltaTime)
                 lastJumpTime = currentTime
                 -- Notify for debugging (optional, can be removed)
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Auto Jump triggered",
                     Duration = 1
                 })
@@ -2551,7 +2551,7 @@ local function autoSnipeSpecificLoop()
                     autoSnipeSpecificEnabled = false
                     shouldRunSpecificLoop = false
                     StarterGui:SetCore("SendNotification", {
-                        Title = "Elerium Hub",
+                        Title = "4n9d's STFO Hub",
                         Text = "Specific target not valid for sniping!",
                         Duration = 3
                     })
@@ -2661,23 +2661,23 @@ local function checkSafezone()
 end
 
 -- Create the main window
-local win = UILib:Window("Elerium Hub | Steal Time From Others", Color3.fromRGB(128, 0, 128), Enum.KeyCode.LeftControl)
+local win = UILib:Window("4n9d's STFO Hub | Steal Time From Others", Color3.fromRGB(128, 0, 128), Enum.KeyCode.LeftControl)
 
 -- Notes Tab (kept as is, simple enough)
 local notesTab = win:Tab("Notes")
-notesTab:Label("Elerium Hub | Steal Time From Others")
-notesTab:Label("Version: v1.20 [Paid]")
+notesTab:Label("4n9d's STFO Hub | Steal Time From Others")
+notesTab:Label("Version: v1.0 [Paid]")
 notesTab:Label("Toggle UI: LeftControl")
-notesTab:Label("Made by: Elerium / Emeraltzz")
-notesTab:Button("Copy Elerium Hub Discord Invite Link", function()
-    setclipboard("https://discord.gg/hUR34yj5eT")
+notesTab:Label("Made by: 4n9d on discord")
+notesTab:Button("Copy 4n9d's guns.lol link", function()
+    setclipboard("https://guns.lol/4n9d")
 end)
 
 -- Sword Modification Tab (refactored into function)
 GUI = GUI or {}
 function GUI.createSwordModificationTab()
     local tab = win:Tab("Sword Modification")
-    tab:Label("📜 Sword Adder Inventory [OP]")
+    tab:Label("📜 Sword Adder Inventory")
     tab:Textbox("Enter Sword Name", false, function(text)
         if text and text ~= "" then
             changeSword(text)
@@ -2875,7 +2875,7 @@ function GUI.createSwordModificationTab()
             disableTank()
         end
     end)
-    tab:Button("Elerium Hub PVP Pack", function()
+    tab:Button("4n9d's STFO Hub PVP Pack", function()
         pcall(function()
             local success, result = pcall(function()
                 return loadstring(game:HttpGet("https://pastefy.app/Q2ec1RPh/raw"))()
@@ -2883,7 +2883,7 @@ function GUI.createSwordModificationTab()
             if not success then
                 warn("Failed to load PVP Pack: " .. tostring(result))
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Failed to load PVP Pack. Check the script URL.",
                     Duration = 5
                 })
@@ -2895,13 +2895,13 @@ function GUI.createSwordModificationTab()
         if value then
             task.spawn(checkSafezone)
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Auto Deposit Time Enabled!",
                 Duration = 3
             })
         else
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Auto Deposit Time Disabled!",
                 Duration = 3
             })
@@ -2963,7 +2963,7 @@ function GUI.createAutoSnipeTab()
         specificSnipeTarget = playerManagement:getPlayerByName(selected)
         if specificSnipeTarget then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Snipe target set to: " .. selected,
                 Duration = 3
             })
@@ -2977,14 +2977,14 @@ function GUI.createAutoSnipeTab()
             if specificSnipeTarget then
                 task.spawn(autoSnipeSpecificLoop)
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Auto Snipe Enabled for " .. specificSnipeTarget.Name .. "!",
                     Duration = 3
                 })
             else
                 autoSnipeSpecificEnabled = false
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "No target selected for Auto Snipe!",
                     Duration = 3
                 })
@@ -2992,7 +2992,7 @@ function GUI.createAutoSnipeTab()
         else
             shouldRunSpecificLoop = false
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Target Auto Snipe Disabled!",
                 Duration = 3
             })
@@ -3005,14 +3005,14 @@ function GUI.createAutoSnipeTab()
         if autoSnipeEnabled then
             task.spawn(autoSnipeLoop)
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Auto Snipe Enabled for all players!",
                 Duration = 3
             })
         else
             shouldRunLoop = false
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Auto Snipe Disabled!",
                 Duration = 3
             })
@@ -3293,7 +3293,7 @@ autoFarmsTab:Toggle("Auto K/D Decreaser", false, function(value)
         local character = player.Character
         if not character or not character:FindFirstChild("Humanoid") or not character:FindFirstChild("HumanoidRootPart") then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Character not found! Auto K/D Decreaser disabled.",
                 Duration = 3
             })
@@ -3305,7 +3305,7 @@ autoFarmsTab:Toggle("Auto K/D Decreaser", false, function(value)
         local safezoneMiddle = safezone and safezone:FindFirstChild("Middle")
         if not safezone or not safezoneMiddle then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Safezone not found! Auto K/D Decreaser disabled.",
                 Duration = 3
             })
@@ -3350,7 +3350,7 @@ autoFarmsTab:Toggle("Auto K/D Decreaser", false, function(value)
         humanoid:TakeDamage(humanoid.Health) -- Forces respawn
 
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Player has moved outside the Safezone and reset",
             Duration = 3
         })
@@ -3382,7 +3382,7 @@ cameraTab:Toggle("Spectate Players", settings.spectatePlayersEnabled, function(v
         camera.CameraType = Enum.CameraType.Custom
         camera.CameraSubject = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Stopped spectating",
             Duration = 3
         })
@@ -3596,7 +3596,7 @@ end
 local dropdown = openCaseTab:Dropdown("Select Case", caseNames, function(selected)
     selectedCase = selected
     StarterGui:SetCore("SendNotification", {
-        Title = "Elerium Hub",
+        Title = "4n9d's STFO Hub",
         Text = "Selected case: " .. selected,
         Duration = 3
     })
@@ -3613,21 +3613,21 @@ openCaseTab:Button("Open Selected Case", function()
         end
         if caseInfo then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Purchasing " .. caseInfo.Name .. ": " .. caseInfo.Description,
                 Duration = 3
             })
             openCase(caseInfo.Name)
         else
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "Invalid case selected!",
                 Duration = 3
             })
         end
     else
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "No case selected!",
             Duration = 3
         })
@@ -3649,13 +3649,13 @@ openCaseTab:Toggle("Auto Open Key Case", autoOpenKeyCaseEnabled, function(value)
             end
         end)
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Auto Open Key Case Enabled!",
             Duration = 3
         })
     else
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "Auto Open Key Case Disabled!",
             Duration = 3
         })
@@ -3689,7 +3689,7 @@ function GUI.createTeleportKillsTab()
         targetedTPKillPlayer = playerManagement:getPlayerByName(selected)
         if targetedTPKillPlayer then
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "TP Kill target set to: " .. selected,
                 Duration = 3
             })
@@ -3706,14 +3706,14 @@ function GUI.createTeleportKillsTab()
                 end
                 tpKillConnection = enableSpecificTPKill()
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "TP Kill enabled for " .. targetedTPKillPlayer.Name,
                     Duration = 3
                 })
             else
                 settings.tpKillEnabled = false
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "No target selected for TP Kill!",
                     Duration = 3
                 })
@@ -3724,7 +3724,7 @@ function GUI.createTeleportKillsTab()
                 tpKillConnection = nil
             end
             StarterGui:SetCore("SendNotification", {
-                Title = "Elerium Hub",
+                Title = "4n9d's STFO Hub",
                 Text = "TP Kill Disabled!",
                 Duration = 3
             })
@@ -3768,14 +3768,14 @@ function GUI.createSettingsTab()
             end)
             if success then
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Xyrez Script loaded successfully!",
                     Duration = 3
                 })
             else
                 warn("Failed to load Xyrez Script: " .. tostring(result))
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Failed to load Xyrez Script. Check the script URL.",
                     Duration = 5
                 })
@@ -3789,14 +3789,14 @@ function GUI.createSettingsTab()
             end)
             if success then
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Animations Hub (FE) loaded successfully!",
                     Duration = 3
                 })
             else
                 warn("Failed to load Animations Hub (FE): " .. tostring(result))
                 StarterGui:SetCore("SendNotification", {
-                    Title = "Elerium Hub",
+                    Title = "4n9d's STFO Hub",
                     Text = "Failed to load Animations Hub (FE). Check the script URL.",
                     Duration = 5
                 })
@@ -3819,7 +3819,7 @@ function GUI.createSettingsTab()
             end
         end
         StarterGui:SetCore("SendNotification", {
-            Title = "Elerium Hub",
+            Title = "4n9d's STFO Hub",
             Text = "FPS Boost applied! Textures removed and materials set to SmoothPlastic.",
             Duration = 3
         })
@@ -3885,14 +3885,14 @@ player.CharacterAdded:Connect(function(character)
     local humanoid = character:WaitForChild("Humanoid", waitTime)
     local rootPart = character:WaitForChild("HumanoidRootPart", waitTime)
     if not humanoid or not rootPart then
-        warn("[Elerium Hub] Character not fully loaded for feature reapply")
+        warn("[4n9d's STFO Hub] Character not fully loaded for feature reapply")
         return
     end
-    print("[Elerium Hub] Character loaded, reapplying features")
+    print("[4n9d's STFO Hub] Character loaded, reapplying features")
 
     -- Reapply Reach
     if Brew.isReach then
-        print("[Elerium Hub] Reapplying reach")
+        print("[4n9d's STFO Hub] Reapplying reach")
         pcall(function()
             Brew:undoReach()
             Brew:doReach()
@@ -3901,7 +3901,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Visualizer
     if Brew.selBox then
-        print("[Elerium Hub] Reapplying visualizer")
+        print("[4n9d's STFO Hub] Reapplying visualizer")
         pcall(function()
             Brew:doSelBox()
         end)
@@ -3909,7 +3909,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Flick
     if flicking then
-        print("[Elerium Hub] Reapplying flick")
+        print("[4n9d's STFO Hub] Reapplying flick")
         pcall(function()
             initializeFlick(character)
         end)
@@ -3917,7 +3917,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Carpet
     if settings.carpetEnabled then
-        print("[Elerium Hub] Reapplying carpet")
+        print("[4n9d's STFO Hub] Reapplying carpet")
         pcall(function()
             enableCarpet()
         end)
@@ -3925,7 +3925,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Hip Height
     if settings.hipHeightEnabled then
-        print("[Elerium Hub] Reapplying hip height")
+        print("[4n9d's STFO Hub] Reapplying hip height")
         pcall(function()
             setHipHeight(settings.hipHeightValue)
         end)
@@ -3933,7 +3933,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Freeze Mode
     if settings.freezeModeEnabled then
-        print("[Elerium Hub] Reapplying freeze mode")
+        print("[4n9d's STFO Hub] Reapplying freeze mode")
         pcall(function()
             rootPart.Anchored = true
         end)
@@ -3941,7 +3941,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Walkspeed
     if settings.walkspeedEnabled then
-        print("[Elerium Hub] Reapplying walkspeed")
+        print("[4n9d's STFO Hub] Reapplying walkspeed")
         pcall(function()
             Brew:setWalkSpeed(Brew.cWalkspeed)
         end)
@@ -3949,7 +3949,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Jump Power
     if settings.jumpPowerEnabled then
-        print("[Elerium Hub] Reapplying jump power")
+        print("[4n9d's STFO Hub] Reapplying jump power")
         pcall(function()
             Brew:setJumpPower(Brew.cJumppower)
         end)
@@ -3957,7 +3957,7 @@ player.CharacterAdded:Connect(function(character)
 
     -- Reapply Tank Mode
     if settings.tankEnabled then
-        print("[Elerium Hub] Reapplying tank mode")
+        print("[4n9d's STFO Hub] Reapplying tank mode")
         pcall(function()
             enableTank()
         end)
