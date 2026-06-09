@@ -3406,12 +3406,6 @@ local playerModificationTab = win:Tab("Player Modification")
 playerModificationTab:Button("Invisible Mode", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
 end)
-playerModificationTab:Toggle("Freeze Mode", settings.freezeModeEnabled, function(value)
-    settings.freezeModeEnabled = value
-    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-        player.Character.HumanoidRootPart.Anchored = value
-    end
-end)
 playerModificationTab:Toggle("Carpet [Decreases Your Hitbox", settings.carpetEnabled, function(value)
     settings.carpetEnabled = value
     if value then
@@ -3455,23 +3449,6 @@ playerModificationTab:Toggle("Lay Down [Carpet V2]", settings.layDownEnabled, fu
         end
     end
 end)
-playerModificationTab:Toggle("Hip Height", settings.hipHeightEnabled, function(value)
-    settings.hipHeightEnabled = value
-    if value then
-        setHipHeight(settings.hipHeightValue)
-    elseif player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-        player.Character.Humanoid.HipHeight = 0
-    end
-end)
-playerModificationTab:Textbox("Hip Height Value (0 to 20)", tostring(settings.hipHeightValue), function(text)
-    local value = tonumber(text)
-    if value and value >= 0 and value <= 20 then
-        settings.hipHeightValue = value
-        if settings.hipHeightEnabled then
-            setHipHeight(value)
-        end
-    end
-end)
 playerModificationTab:Toggle("Spin Mode", settings.spinEnabled, function(value)
     settings.spinEnabled = value
     if value and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
@@ -3489,14 +3466,6 @@ playerModificationTab:Textbox("Spin Speed (0 to 500)", tostring(settings.spinSpe
     local value = tonumber(text)
     if value and value >= 0 and value <= 500 then
         settings.spinSpeed = value
-    end
-end)
-playerModificationTab:Toggle("Lag Switch [WIP]", settings.lagSwitchEnabled, function(value)
-    settings.lagSwitchEnabled = value
-    if value then
-        enableLagSwitch()
-    else
-        disableLagSwitch()
     end
 end)
 
